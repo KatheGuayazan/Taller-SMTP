@@ -7,7 +7,7 @@
 
 <!-- Flujo básico de envío SMTP -->
 <h3 align="center">Flujo de envío SMTP</h3>
-![texto](Assets/Taller SMTP/Arte/Img/Flujo.png)
+![texto](Assets/Flujo.png)
 
 <!-- Manejo de respuestas del servidor -->
 <h3 align="center">Manejo de respuestas del servidor</h3>
