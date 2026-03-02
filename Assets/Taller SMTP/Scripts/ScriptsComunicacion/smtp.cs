@@ -16,13 +16,13 @@ public class SimpleEmailSender
         public static bool enviado = false;
         public static string mensaje = "Enviando correo...";
     }
-
+    //lleva a cabo la tarea en segundo plano para no bloquear el hilo principal del juego mientras se envía el correo
     public static async Task SendEmailAsync(ResultadoJuego resultado) 
     {
         EmailStatus.enviado = false;
         EmailStatus.mensaje = "Enviando correo...";
 
-        if (string.IsNullOrEmpty(PlayerEmail.correo))
+        if (string.IsNullOrEmpty(PlayerEmail.correo)) //No envia el correo si el campo esta vacio
         {
             EmailStatus.mensaje = "Correo no válido";
             return;
@@ -32,8 +32,8 @@ public class SimpleEmailSender
         {
             try
             {
-                string fromEmail = "vsebasjrincon12@gmail.com";
-                string password = "ptax pdax wxss hvxc";
+                string fromEmail = "ingmultimediausbbog@gmail.com";
+                string password = "fsjq ioqf zsxs jrzf";
                 string toEmail = PlayerEmail.correo;
 
                 string body = resultado == ResultadoJuego.VictoriaJugador1
@@ -53,7 +53,7 @@ public class SimpleEmailSender
                     EnableSsl = true
                 };
 
-                smtp.Send(mail);
+                smtp.Send(mail); //envia el correo
 
                 EmailStatus.enviado = true;
                 EmailStatus.mensaje = "Email sended succesfuly";
